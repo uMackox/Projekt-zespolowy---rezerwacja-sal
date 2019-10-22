@@ -1,7 +1,7 @@
 <?php
 	$servername = "localhost";
-	$dbusername = "root";
-	$dbpassword = "root";
+	$dbusername = "ProjectManager";
+	$dbpassword = "projectmanager";
 	$dbname = "PZDB";
 
 	$dbconn = new mysqli($servername,$dbusername,$dbpassword,$dbname);
