@@ -1,0 +1,72 @@
+body{
+    background-color: darkgray;
+}
+
+div{
+    position:relative;
+    border: solid red 2px;
+    padding: 2px;
+    text-align: center;
+    height: 100%;
+    /*position: relative;
+    */
+    width: 100%;
+}
+
+div.head{
+    height:5%;
+    width: 100%;
+    position: absolute;
+    top:0px;
+
+
+}
+div.content{
+    height:80%;
+    width: 100%;
+    position: absolute;
+    top: 10%;
+}
+
+div.footer{
+    height:5%;
+    width:100%;
+    position:absolute;;
+    bottom: 0%;
+}
+
+.navigation-bar-item{
+    margin:1px;
+    text-align: center;
+    color: white;
+}
+
+.message-warning{
+    color:red;
+}
+
+
+.form-list{
+    list-style-type: none;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #1281d1;
+    text-align: center;
+    padding: 5px 15px;
+    margin: 1px;
+}
+
+a.navigation-bar-item{
+    position: absolute;
+    right:50px;
+
+}
+
+p.message{
+    float: left;
+    /*border: solid black 1px;
+*/
+}

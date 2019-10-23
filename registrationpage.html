@@ -1,30 +1,48 @@
-<!doctype html>
 <html>
 <head>
+	<title>Registration Page</title>
+	<link rel="Stylesheet" type="text/css" href="Style/mainstyle.css">
 </head>
 <body>
-	Registration page
-	<br>
-	<a href="index.html">Main page</a>
-	<br>
-	<form action="register.php" method="POST">
-		Login: <input type="text" id="login" name="login">
+	<div class="body">
+		<div class="head">
+			<p class="message navigation-bar-item">Registration Page</p>
+			<a href="index.html" class="navigation-bar-item">Main page</a>
+		</div>
+		<div class="content">
+			<form action="register.php" method="POST">
+				<ul class="form-list">
+					<li>
+						Login:
+						<input type="text" id="login" name="login">
+					</li>
+					<li>
+						Password:
+						<input type="password" id="password" name="password">
+					</li>
+					<li>
+						Role:
+						<label for="Tenant">Tenant</label>
+						<input type="radio" name="role" id="Tenant" value="Tenant">
+						<label for="Agent">Agent</label>
+						<input type="radio" name="role" id="Agent" value="Agent">
+					</li>
+					<li>
+						<button type="submit">Register</button>
+					</li>
+				</ul>
 
-		<br>
 
-		Password: <input type="password" id="password" name="password">
 
-		<br>
 
-		Role:
-		<label for="Tenant">Tenant</label>
-		<input type="radio" name="role" id="Tenant" value="Tenant">
-		<label for="Agent">Agent</label>
-		<input type="radio" name="role" id="Agent" value="Agent">
 
-		<br>
-		<button type="submit">Register</button>
 
-	</form>
+
+			</form>
+		</div>
+		<div class="footer">
+
+		</div>
+	</div>
 </body>
 </html>
