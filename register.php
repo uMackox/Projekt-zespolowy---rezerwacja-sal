@@ -14,12 +14,28 @@
 			<ul class="form-list">
 				<li>
 					Login:
-					<input type="text" id="login" name="login">
+					<input type="text" id="login" name="login" required>
 				</li>
 				<li>
 					Password:
-					<input type="password" id="password" name="password">
+					<input type="password" id="password" name="password" required>
 				</li>
+                <li>
+                    Name:
+                    <input type="text" id="name" name="name"  required>
+                </li>
+                <li>
+                    Surname:
+                    <input type="text" id="surname" name="surname"  required>
+                </li>
+                <li>
+                    Phone number:
+                    <input type="text" id="phonenumber" name="phonenumber">
+                </li>
+                <li>
+                    Email:
+                    <input type="email" id="email" name="email" required>
+                </li>
 				<li>
 					Role:
 					<label for="Tenant">Tenant</label>
@@ -47,6 +63,10 @@
 			}
 			else{
 				$userrole = $_POST['role'];
+				$username = $_POST['name'];
+				$usersurname = $_POST['surname'];
+				$userphone = $_POST['phonenumber'];
+				$useremail = $_POST['email'];
 				if($dbconn->connect_error){
 					die("Connetcion failed : ".$dbconn->connect_error);
 				}
@@ -56,7 +76,8 @@
 					echo "<p class='message-warning'>User name already taken</p>";
 				}
 				else{
-					$sql = "INSERT INTO Users (Login,Password,Role) VALUES('".$userlogin."','".$userpassword."','".$userrole."')";
+					$sql = "INSERT INTO Users (Login,Password,Role,Name,Surname,Phonenumber,Email)
+                            VALUES('".$userlogin."','".$userpassword."','".$userrole."','".$username."','".$usersurname."','".$userphone."','".$useremail."')";
 					if($dbconn->query($sql)==TRUE){
 						echo "Succesfully registered user";
 					}
