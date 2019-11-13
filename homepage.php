@@ -11,7 +11,7 @@
 
         if(isset($_SESSION['user_id'])){
             echo "<p class='message navigation-bar-item'>Welcome,".$_SESSION['user_id']."</p>";
-            echo "<a href='logout.php' class='navigation-bar-item'>Logout</a>";
+            echo "<a href='logout.php' class='navigation-bar-item'>Logout</a><br>";
             echo "<a href='manageaccount.php' class='navigation-bar-item'>My account</a>";
         }
         else{
