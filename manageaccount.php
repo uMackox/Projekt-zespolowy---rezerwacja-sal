@@ -62,9 +62,9 @@
                     }
                 echo "
                      Phone number   : <input type=\"text\" id=\"phonenumber\" name=\"phonenumber\" value = \"".$userinfo['Phonenumber']."\"><br>
-                     Email          : <input type=\"text\" id=\"email\" name=\"email\" value = \"".$userinfo['Email']."\" required><br>
+                     Email          : <input type=\"email\" id=\"email\" name=\"email\" value = \"".$userinfo['Email']."\" required><br>
                     
-                    <button type=\"submit\">Save changes</button><br>
+                    <input type=\"submit\" name=\"changeinfo\" value=\"Save changes\"><br>
                 </form>
                 ";
 

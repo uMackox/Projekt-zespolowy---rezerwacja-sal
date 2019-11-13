@@ -54,7 +54,7 @@
                 }
                 else{
                     #echo $dbconn->query($sql);
-                    echo "<p class='message-warning'>Invalid username or password<p class='message-warning'>";
+                    echo "<p class='message-warning'>Invalid username or password</p>";
                 }
             }
 
