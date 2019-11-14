@@ -1,0 +1,118 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hall {
+  overflow: auto;
+  position: relative;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  min-height: 220px;
+  width: 90%;
+  -webkit-transition: width 1s, height 1s; /* Safari prior 6.1 */
+  transition: width 1s, height 1s;
+}
+
+.hall h2{
+  position: relative;
+}
+
+.hall p {
+  font-size: 20px;
+}
+
+.hall img {
+  margin-right: 20px;
+  float: left;
+  width: 300px;
+  height: 200px;
+  -webkit-transition: width 1s, height 1s; /* Safari prior 6.1 */
+  transition: width 1s, height 1s;
+}
+
+.hall img:hover {
+  width: 600px;
+  height: 400px;
+}
+
+.main,
+.sidebar {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.main {
+
+  width: 80%;
+  /* margin: 25px 25px 25px 25px; */
+  margin-right: 20px;
+  padding: 20px 20px 20px 20px;
+  height: 150vh;
+}
+
+.sidebar {
+  right: 0;
+  margin-top: 20px;
+  margin-right: 10px;
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: center;
+  background: rgba(255, 255, 255, 0);
+  position: -webkit-sticky;
+  position: sticky;
+  position: fixed;
+  top: 10px;
+  width: 15%;
+  height: 25vh;
+}
+
+.button {
+	display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 0;
+  overflow: hidden;
+  position: relative;
+  transform: translatez(0);
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 20px;
+	font-weight: normal;
+}
+
+.bmenu {
+  box-shadow: 0 9px 18px rgba(0,0,0,0.2);
+	text-align: center;
+	border-radius: 50px;
+  padding: 10px;
+  color: white;
+  background: #42b3f5;
+  transition: all 0.2s ease-out 0s;
+}
+
+.cont {
+  float: right;
+  margin-left: -10px;
+  max-width: 150px;
+  font-size: 15px;
+	text-align: center;
+	border-radius: 50px;
+  width: 30%;
+  padding: 10px;
+  color: white;
+  background: #42b3f5;
+  transition: all 0.2s ease-out 0s;
+}
+
+.button:hover {
+  background: rgba(16, 97, 163, 0.3);
+}
+
+
+body {
+  background-color: #42a4f5;
+  font-family: sans-serif;
+  padding: 10px;
+}
