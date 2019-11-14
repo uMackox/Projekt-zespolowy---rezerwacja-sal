@@ -49,6 +49,9 @@ img {
   width: 600px;
   height: 400px;
   }
+  .sidebar {
+    visibility: visible;
+  }
 }
 
 @media screen and (max-width: 678px) {
