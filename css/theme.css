@@ -122,8 +122,6 @@ img {
   top: 10px;
   width: 15%;
   height: 25vh;
-  -webkit-transition: visibility 1s; /* Safari prior 6.1 */
-  transition: visibility 1s;
 }
 
 .button {
