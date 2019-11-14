@@ -68,6 +68,20 @@ img {
   .hall {
     width: 100%;
   }
+  .mobilebar img {
+    width: 45px;
+    height: 45px;
+  }
+  .mobile {
+    width: 45px !important;
+    height: 45px !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+    display: inherit !important;
+  }
+  .mobilebar {
+    padding: 5px;
+    display: inherit !important;
+  }
 }
 
 .main,
@@ -81,7 +95,8 @@ img {
   padding: 20px 20px 20px 20px;
 }
 
-.sidebar {
+.sidebar,
+.mobilebar {
   right: 0;
   margin-top: 20px;
   margin-right: 10px;
@@ -123,7 +138,6 @@ img {
 
 .cont {
   float: right;
-  margin-left: -10px;
   max-width: 150px;
   font-size: 15px;
 	text-align: center;
@@ -133,6 +147,25 @@ img {
   color: white;
   background: #42b3f5;
   transition: all 0.2s ease-out 0s;
+}
+
+.mobile {
+  float: right;
+  margin-right: -10px;
+  max-width: 50px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 50px;
+  width: 30%;
+  /* padding: 10px; */
+  color: white;
+  background: #42b3f5;
+  transition: all 0.2s ease-out 0s;
+}
+
+.mobile,
+.mobilebar {
+  display: none;
 }
 
 .button:hover {
