@@ -16,7 +16,7 @@
         }
         else{
             echo "<p class='message navigation-bar-item'>Not logged in</p>";
-            echo "<a href='loginpage.html' class='navigation-bar-item'>Login Page</a>";
+            echo "<a href='login.php' class='navigation-bar-item'>Login Page</a>";
         }
         ?>
     </div>
