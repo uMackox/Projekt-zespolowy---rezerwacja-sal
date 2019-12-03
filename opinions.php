@@ -20,7 +20,6 @@
             $average = 0;
             while ($row = $result->fetch_assoc()){
                 $average += $row["Ocena"];
-                echo "Id opinii: ".$row["IDOpinii"]."<br>";
                 echo "Ocena: ".$row["Ocena"]."<br>";
                 echo "Komentarz: ".$row["komentarz"]."<br>";
                 echo "<br>";
