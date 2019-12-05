@@ -2,7 +2,7 @@
 session_start();
 ?>
     <form action="SaveInvoice.php" method="post">
-        <input type="submit" name="saveinvoice" value="Ocen">
+        <input type="submit" name="saveinvoice" value="Zapisz">
     </form>
 
 <?php
