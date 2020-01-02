@@ -18,47 +18,50 @@
             Password: <input type="password" id="password" name="password">
 
             <br>
-            <button type="submit">Sign-in</button>
+            <button type="submit" name="loginpressed" value="loginpressed">Sign-in</button>
 
         </form>
 
         <?php
-        session_start();
-        if(! empty($_POST)){
-            if(isset($_POST['login']) && isset($_POST['password'])){
-                $servername = "localhost";
-                $dbusername = "ProjectManager";
-                $dbpassword = "projectmanager";
-                $dbname = "PZDB";
+        if(isset($_POST['loginpressed'])){
+            session_start();
+            if(! empty($_POST)){
+                if(isset($_POST['login']) && isset($_POST['password'])){
+                    $servername = "localhost";
+                    $dbusername = "ProjectManager";
+                    $dbpassword = "projectmanager";
+                    $dbname = "PZDB";
 
-                $dbconn = new mysqli($servername,$dbusername,$dbpassword,$dbname);
+                    $dbconn = new mysqli($servername,$dbusername,$dbpassword,$dbname);
 
-                if($dbconn->connect_error){
-                    die("Connetcion failed : ".$dbconn->connect_error);
-                }
-                $userlogin = $_POST['login'];
-                $userpassword = $_POST['password'];
+                    if($dbconn->connect_error){
+                        die("Connetcion failed : ".$dbconn->connect_error);
+                    }
+                    $userlogin = $_POST['login'];
+                    $userpassword = $_POST['password'];
 
-                $sql = "SELECT * FROM Users WHERE Login like '".$userlogin."' ";
-                $result = $dbconn->query($sql);
-                if($result->num_rows>0){
-                    if(password_verify($userpassword,$result->fetch_assoc()["Password"])){
-                        $user = $result->fetch_object();
-                        $_SESSION['user_id'] = $userlogin;
-                        header("Location: ./homepage.php");
-                        exit;
+                    $sql = "SELECT * FROM Users WHERE Login like '".$userlogin."' ";
+                    $result = $dbconn->query($sql);
+                    if($result->num_rows>0){
+                        if(password_verify($userpassword,$result->fetch_assoc()["Password"])){
+                            $user = $result->fetch_object();
+                            $_SESSION['user_id'] = $userlogin;
+                            header("Location: ./homepage.php");
+                            exit;
+                        }
+                        else{
+                            echo "<p class='message-warning'>Invalid username or password</p>";
+                        }
                     }
                     else{
-                        echo "<p class='message-warning'>Invalid username or password</p>";
+                        #echo $dbconn->query($sql);
+                        echo "<p class='message-warning'>Invalid username or password<p class='message-warning'>";
                     }
                 }
-                else{
-                    #echo $dbconn->query($sql);
-                    echo "<p class='message-warning'>Invalid username or password<p class='message-warning'>";
-                }
-            }
 
+            }
         }
+
         ?>
     </div>
     <div class="footer">
