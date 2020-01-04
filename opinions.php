@@ -13,15 +13,15 @@
             die("Connection failed: ".$dbconn->connect_error);
         }
 
-        $sqlquery = "SELECT * FROM Opinie WHERE IDSali like '".$roomid."'";
+        $sqlquery = "SELECT * FROM Opinions WHERE IDRoom like '".$roomid."'";
         $result = $dbconn->query($sqlquery);
 
         if($result->num_rows>0){
             $average = 0;
             while ($row = $result->fetch_assoc()){
-                $average += $row["Ocena"];
-                echo "Ocena: ".$row["Ocena"]."<br>";
-                echo "Komentarz: ".$row["komentarz"]."<br>";
+                $average += $row["Rating"];
+                echo "Ocena: ".$row["Rating"]."<br>";
+                echo "Komentarz: ".$row["Comment"]."<br>";
                 echo "<br>";
             }
             $average /= $result->num_rows;
