@@ -15,7 +15,6 @@
     $result = $dbconn->query($sqlquery);
 
     if ($result->num_rows > 0) {
-        $average = 0;
         while ($row = $result->fetch_assoc()) {
 
             echo "Nazwa sali: " . $row["Name"] . "<br>";
