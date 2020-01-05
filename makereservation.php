@@ -1,8 +1,5 @@
 <?php
     session_start();
-    if(isset($_SESSION['user_id'])){
-        echo "Zalogowany<br>";
-    }
     if(isset($_GET['roomid'])){
         $_SESSION['roomid'] = $_GET['roomid'];
     }
