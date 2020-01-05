@@ -24,7 +24,7 @@ if(isset($_GET['roomid'])){
             die("Connection failed: ".$dbconn->connect_error);
         }
 
-        $sqlquery = "INSERT INTO Opinie(IDRoom,Rating,Comment) VALUES
+        $sqlquery = "INSERT INTO Opinions(IDRoom,Rating,Comment) VALUES
             (".$_SESSION['roomid'].",'".$_POST['rating']."','".$_POST['comment']."')";
         if($dbconn->query($sqlquery) == TRUE){
             echo "Pomyślnie dodano opinię<br>";
