@@ -27,6 +27,8 @@
                 case 3: echo " Zrealizowana <br>"; break;
                 case 4: echo " Anulowana <br>"; break;
             }
+            echo "<a href='CheckInvoice.php?resid=".$row['IDReservation']."'>Check invoice</a><br>";
+            echo "<a href='SaveInvoice.php?resid=".$row['IDReservation']."'>Save Invoice</a><br>";
             echo "<br>";
         }
     } else {

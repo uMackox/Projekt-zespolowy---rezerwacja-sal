@@ -2,13 +2,6 @@
 session_start();
 
 ?>
-<form action="addroom.php" method="post">
-    Nazwa sali : <input type="text" id="name" name="name" required><br>
-    Adres : <input type="text" id="address" name="address" required><br>
-    Miasto : <input type="text" id="city" name="city" required><br>
-    Opis : <input type="text" id="description" name="description" maxlength="200"><br>
-    <input type="submit" name="addroom" value="Dodaj">
-</form>
 
 <?php
     if(isset($_POST['addroom']) && isset($_SESSION['user_id'])){
@@ -40,6 +33,17 @@ session_start();
             else{
                 echo "Nie posiadasz odpowiednich uprawnień <br>";
             }
+    }
+    else if(isset($_SESSION['user_id'])) {
+        ?>
+        <form action="addroom.php" method="post">
+            Nazwa sali : <input type="text" id="name" name="name" required><br>
+            Adres : <input type="text" id="address" name="address" required><br>
+            Miasto : <input type="text" id="city" name="city" required><br>
+            Opis : <input type="text" id="description" name="description" maxlength="200"><br>
+            <input type="submit" name="addroom" value="Dodaj">
+        </form>
+        <?php
     }
     else{
         echo "Nie jesteś zalogowany<br>";

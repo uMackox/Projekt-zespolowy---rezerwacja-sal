@@ -18,6 +18,7 @@
 
         if($result->num_rows>0){
             $average = 0;
+            echo "<a href='addopinion.php?roomid=".$roomid."'>Add opinion</a><br>";
             while ($row = $result->fetch_assoc()){
                 $average += $row["Rating"];
                 echo "Ocena: ".$row["Rating"]."<br>";
@@ -28,8 +29,10 @@
             echo "Średnia ocena sali: ".$average;
         }
         else {
-            echo "Brak opinii o sali";
+            echo "There are no opinions about this room yet. You can be the first one!<br>";
+            echo "<a href='addopinion.php?roomid=".$roomid."'>Add opinion</a>";
         }
     }
+
 
     ?>
