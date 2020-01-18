@@ -20,32 +20,33 @@ session_start();
         $result = $dbconn->query($sqlquery);
         $result = $result->fetch_assoc();
             if($result['Role'] == "Agent"){
-                $sqlquery = "INSERT INTO Room(Owner,Name,Address,City,Description) VALUES
-                ('".$result['Login']."','".$_POST['name']."','".$_POST['address']."','".$_POST['city']."','".$_POST['description']."')";
+                $sqlquery = "INSERT INTO Room(Owner,Name,Address,City,Description,PricePerHour) VALUES
+                ('".$result['Login']."','".$_POST['name']."','".$_POST['address']."','".$_POST['city']."','".$_POST['description']."',".$_POST['priceperhour'].")";
                 if($dbconn->query($sqlquery) == TRUE){
-                    echo "Pomyślnie dodano salę<br>";
+                    echo "Successfully added room<br>";
                 }
                 else{
                     echo $dbconn->error;
-                    echo "Dodanie salii nie powiodło się<br>";
+                    echo "Couldn't add room<br>";
                 }
             }
             else{
-                echo "Nie posiadasz odpowiednich uprawnień <br>";
+                echo "You have insufficient permissions. <br>";
             }
     }
     else if(isset($_SESSION['user_id'])) {
         ?>
         <form action="addroom.php" method="post">
-            Nazwa sali : <input type="text" id="name" name="name" required><br>
-            Adres : <input type="text" id="address" name="address" required><br>
-            Miasto : <input type="text" id="city" name="city" required><br>
-            Opis : <input type="text" id="description" name="description" maxlength="200"><br>
-            <input type="submit" name="addroom" value="Dodaj">
+            Room name : <input type="text" id="name" name="name" required><br>
+            Address : <input type="text" id="address" name="address" required><br>
+            City : <input type="text" id="city" name="city" required><br>
+            Description : <input type="text" id="description" name="description" maxlength="200"><br>
+            Price per hour : <input type="number" id="priceperhour" name="priceperhour"><br>
+            <input type="submit" name="addroom" value="Add">
         </form>
         <?php
     }
     else{
-        echo "Nie jesteś zalogowany<br>";
+        echo "You are not logged in<br>";
     }
 ?>
