@@ -49,13 +49,8 @@
 			</ul>
 			<?php
 			if(isset($_POST['register'])){
-                $servername = "localhost";
-                $dbusername = "ProjectManager";
-                $dbpassword = "projectmanager";
-                $dbname = "PZDB";
-
-                $dbconn = new mysqli($servername,$dbusername,$dbpassword,$dbname);
-                $userlogin = $_POST['login'];
+                include 'dbconn.php';
+			    $userlogin = $_POST['login'];
                 $userpassword = password_hash($_POST['password'],PASSWORD_DEFAULT);
 
 

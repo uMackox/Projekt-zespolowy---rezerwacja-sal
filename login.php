@@ -54,16 +54,7 @@
                                         session_start();
                                         if(! empty($_POST)){
                                             if(isset($_POST['login']) && isset($_POST['password'])){
-                                                $servername = "localhost";
-                                                $dbusername = "ProjectManager";
-                                                $dbpassword = "projectmanager";
-                                                $dbname = "PZDB";
-
-                                                $dbconn = new mysqli($servername,$dbusername,$dbpassword,$dbname);
-
-                                                if($dbconn->connect_error){
-                                                    die("Connetcion failed : ".$dbconn->connect_error);
-                                                }
+                                                include 'dbconn.php';
                                                 $userlogin = $_POST['login'];
                                                 $userpassword = $_POST['password'];
 
@@ -94,7 +85,7 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="register.html">Create an Account!</a>
+                                    <a class="small" href="register.php">Create an Account!</a>
                                 </div>
                             </div>
                         </div>

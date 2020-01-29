@@ -23,13 +23,8 @@
     <div class="content">
         <?php
             // Display account information
-            $servername = "localhost";
-            $dbusername = "ProjectManager";
-            $dbpassword = "projectmanager";
-            $dbname = "PZDB";
-
-            $dbconn = new mysqli($servername,$dbusername,$dbpassword,$dbname);
-            $query = "SELECT * FROM Users WHERE Login like '".$_SESSION['user_id']."' ";
+        include 'dbconn.php';
+             $query = "SELECT * FROM Users WHERE Login like '".$_SESSION['user_id']."' ";
             $result = $dbconn->query($query);
             if($result->num_rows >0){
                 $userinfo = $result->fetch_assoc();

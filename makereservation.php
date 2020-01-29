@@ -4,16 +4,7 @@
         $_SESSION['roomid'] = $_GET['roomid'];
     }
 
-    $servername = "localhost";
-    $dbusername = "ProjectManager";
-    $dbpassword = "projectmanager";
-    $dbname = "PZDB";
-
-    $dbconn = new mysqli($servername,$dbusername,$dbpassword,$dbname);
-
-    if($dbconn->connect_error){
-        die("Connection failed: ".$dbconn->connect_error);
-    }
+    include 'dbconn.php';
     if(!isset($_SESSION['availability'])) {
         ?>
         <form action="makereservation.php" method="post">
@@ -41,6 +32,7 @@
 
 
     if(isset($_POST['checkavailability']) && isset($_SESSION['roomid'])){
+         
         $sqlquery = "SELECT * FROM Reservations WHERE Date = '".$_POST['resdate']."'";
         $result = $dbconn->query($sqlquery);
         $flag=0;

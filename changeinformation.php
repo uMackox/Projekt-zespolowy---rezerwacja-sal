@@ -25,10 +25,7 @@
         <?php
         if(isset($_POST['changeinfo'])){
             // Display account information
-            $servername = "localhost";
-            $dbusername = "ProjectManager";
-            $dbpassword = "projectmanager";
-            $dbname = "PZDB";
+            include 'dbconn.php';
 
             $dbconn = new mysqli($servername,$dbusername,$dbpassword,$dbname);
             $query = "UPDATE Users SET Name='".$_POST['name']."', Surname='".$_POST['surname']."', Role='".$_POST['role']."', Phonenumber='".$_POST['phonenumber']."', Email='".$_POST['email']."' WHERE Login like '".$_SESSION['user_id']."' ";

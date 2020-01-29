@@ -5,16 +5,7 @@ session_start();
 
 <?php
     if(isset($_POST['addroom']) && isset($_SESSION['user_id'])){
-        $servername = "localhost";
-        $dbusername = "ProjectManager";
-        $dbpassword = "projectmanager";
-        $dbname = "PZDB";
-
-        $dbconn = new mysqli($servername,$dbusername,$dbpassword,$dbname);
-
-        if($dbconn->connect_error){
-            die("Connection failed: ".$dbconn->connect_error);
-        }
+        include 'dbconn.php';
         // check role
         $sqlquery = "Select * FROM Users Where Login like '".$_SESSION['user_id']."'";
         $result = $dbconn->query($sqlquery);

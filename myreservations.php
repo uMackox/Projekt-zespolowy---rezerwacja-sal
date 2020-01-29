@@ -1,17 +1,7 @@
 <?php
 
     session_start();
-    $servername = "localhost";
-    $dbusername = "ProjectManager";
-    $dbpassword = "projectmanager";
-    $dbname = "PZDB";
-
-    $dbconn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-
-    if ($dbconn->connect_error) {
-        die("Connection failed: " . $dbconn->connect_error);
-    }
-
+include 'dbconn.php';
     $sqlquery = "SELECT * FROM Reservations WHERE Tenant like '" . $_SESSION['user_id'] . "'";
     $result = $dbconn->query($sqlquery);
 
@@ -29,6 +19,9 @@
             }
             echo "<a href='CheckInvoice.php?resid=".$row['IDReservation']."'>Check invoice</a><br>";
             echo "<a href='SaveInvoice.php?resid=".$row['IDReservation']."'>Save Invoice</a><br>";
+            if($row['Status']<3){
+                echo "<a href='cancelreservation.php?resid=".$row['IDReservation']."'>Cancel reservation</a><br>";
+            }
             echo "<br>";
         }
     } else {

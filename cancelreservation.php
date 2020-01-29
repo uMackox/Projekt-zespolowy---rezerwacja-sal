@@ -2,8 +2,8 @@
     session_start();
     include 'dbconn.php';
 
-    if(isset($_GET['idres']) && isset($_SESSION['user_id'])){
-        $sqlquery = "SELECT * FROM Reservations WHERE IDReservation = ".$_GET['idres'];
+    if(isset($_GET['resid']) && isset($_SESSION['user_id'])){
+        $sqlquery = "SELECT * FROM Reservations WHERE IDReservation = ".$_GET['resid'];
         $result = $dbconn->query($sqlquery);
 
         if($result->num_rows>0){

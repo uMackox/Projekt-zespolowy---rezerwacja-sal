@@ -2,13 +2,7 @@
 session_start();
 
 if(isset($_GET['roomid']) && isset($_SESSION['user_id'])){
-    $servername = "localhost";
-    $dbusername = "ProjectManager";
-    $dbpassword = "projectmanager";
-    $dbname = "PZDB";
-
-    $dbconn = new mysqli($servername,$dbusername,$dbpassword,$dbname);
-
+    include 'dbconn.php';
     if($dbconn->connect_error){
         die("Connection failed: ".$dbconn->connect_error);
     }

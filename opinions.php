@@ -3,16 +3,7 @@
     if(isset($_GET['roomid']) && isset($_SESSION['user_id'])){
         $roomid = $_GET['roomid'];
 
-        $servername = "localhost";
-        $dbusername = "ProjectManager";
-        $dbpassword = "projectmanager";
-        $dbname = "PZDB";
-
-        $dbconn = new mysqli($servername,$dbusername,$dbpassword,$dbname);
-
-        if($dbconn->connect_error){
-            die("Connection failed: ".$dbconn->connect_error);
-        }
+        include 'dbconn.php';
         // Get user data
         $sqlquery = "SELECT * FROM Users WHERE Login like '".$_SESSION['user_id']."'";
         $user = $dbconn->query($sqlquery);

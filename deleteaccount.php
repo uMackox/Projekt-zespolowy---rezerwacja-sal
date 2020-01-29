@@ -14,7 +14,7 @@
             exit;
         }
         else{
-            echo "<p class='message navigation-bar-item'>Password change ".$_SESSION['user_id']."</p>";
+            echo "<p class='message navigation-bar-item'>Delete account ".$_SESSION['user_id']."</p>";
             echo "<a href='homepage.php' class='navigation-bar-item'>Homepage</a>";
             echo "<a href='logout.php' class='navigation-bar-item'>Logout</a>";
         }
