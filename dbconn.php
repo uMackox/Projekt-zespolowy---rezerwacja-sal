@@ -1,8 +1,8 @@
 <?php
-$servername = "mysql.cba.pl";
-$dbusername = "umackox";
-$dbpassword = "Umackoxpz1";
-$dbname = "umackox";
+$servername = "###";
+$dbusername = "###";
+$dbpassword = "###";
+$dbname = "###";
 
 $dbconn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 
